@@ -1,0 +1,58 @@
+[
+  {
+    "name": "apphave",
+    "url": "https://apphave.fun/",
+    "filename": "apphave-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "instapure",
+    "url": "https://instapure.fun/",
+    "filename": "instapure-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "kamapa",
+    "url": "https://kamapa.online/",
+    "filename": "kamapa-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "yayasanamal",
+    "url": "https://yayasanamal.netlify.app/",
+    "filename": "yayasanamal-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "hoodagoods",
+    "url": "https://hoodagoods.netlify.app/",
+    "filename": "hoodagoods-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "terrapurun",
+    "url": "https://terrapurun.online/",
+    "filename": "terrapurun-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  },
+  {
+    "name": "kphlkapuaskahayan",
+    "url": "https://kphlkapuaskahayan.netlify.app/",
+    "filename": "kphlkapuaskahayan-screenshot.jpg",
+    "width": 1200,
+    "height": 800,
+    "delay": 3000
+  }
+]

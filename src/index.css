@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+    font-size: clamp(14px, 1vw, 16px);
+  }
+  
+  body {
+    overscroll-behavior: none;
+  }
+  
+  /* Typography */
+  h1 {
+    @apply font-medium leading-tight;
+    font-size: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  }
+  
+  h2 {
+    @apply font-medium leading-tight;
+    font-size: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  }
+  
+  h3 {
+    @apply font-medium leading-tight;
+    font-size: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  }
+  
+  h4 {
+    @apply font-medium leading-tight;
+    font-size: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  }
+  
+  p {
+    @apply leading-relaxed;
+    font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  }
+
+  /* Smooth Scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Add animation keyframes */
+  @keyframes dashChange {
+    0%, 100% { 
+      stroke-dasharray: 24 10 0 0; 
+      transform: rotate(120deg); 
+    }
+    33% { 
+      stroke-dasharray: 15 120 25 25; 
+    }
+    66% { 
+      stroke-dasharray: 16 25 92 72; 
+    }
+    99% { 
+      stroke-dasharray: 4 250 22 22; 
+      transform: rotate(360deg); 
+    }
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    @apply opacity-100 transition-opacity duration-1000;
+  }
+  
+  /* Aspect ratio utility for project images */
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: calc(9 / 16 * 100%);
+  }
+  
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  /* Typewriter effect */
+  .typewriter-container {
+    @apply space-y-4 overflow-hidden;
+  }
+
+  .typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #00FF99;
+    white-space: nowrap;
+    margin: 0;
+    animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .typewriter-text-delayed {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #00FF99;
+    white-space: nowrap;
+    margin: 0;
+    width: 0;
+    animation: typing 2.5s steps(40, end) 2.5s forwards, blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00FF99 }
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto px-fluid-4;
+  }
+
+  .snap {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .snap > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
