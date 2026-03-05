@@ -72,9 +72,9 @@ const Header: React.FC<HeaderProps> = ({ scrolled, mousePosition, isScrollingUp 
             onClick={() => scrollToSection('Hero')}
           >
             <img 
-              src="https://kphlkapuas-kahayan.info/wp-content/uploads/2025/05/Screenshot-2025-05-05-150403.png" 
+              src="/boby.png" 
               alt="Boby Logo" 
-              className="h-16 xs:h-20 sm:h-24 md:h-32 w-auto transition-all duration-300" 
+              className="h-16 xs:h-20 sm:h-24 md:h-32 w-auto brightness-125 contrast-125 filter transition-all duration-300" 
             />
           </div>
           

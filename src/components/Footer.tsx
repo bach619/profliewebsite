@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center space-y-6">
         {/* Logo */}
         <img 
-          src="https://kphlkapuas-kahayan.info/wp-content/uploads/2025/05/Screenshot-2025-05-05-150403.png" 
+          src="/boby.png" 
           alt="Boby Logo" 
-          className="h-16 w-auto opacity-90"
+          className="h-16 w-auto brightness-125 contrast-125 filter"
         />
 
         {/* Social Media Icons */}
