@@ -59,7 +59,7 @@ const Services = () => {
     <section 
       id="services"
       ref={servicesRef}
-      className="relative min-h-screen py-12 bg-black opacity-0 transition-opacity duration-1000 flex items-center"
+      className="relative min-h-screen py-16 bg-black opacity-0 transition-opacity duration-1000"
     >
       <ParticlesBackground />
       
@@ -76,11 +76,11 @@ const Services = () => {
         </div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Services</h2>
-          <div className="w-16 h-0.5 bg-[#00FF00] mx-auto mb-4"></div>
-          <p className="text-base text-gray-300 leading-relaxed max-w-xl mx-auto">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Services</h2>
+          <div className="w-20 h-0.5 bg-[#00FF00] mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 leading-relaxed max-w-xl mx-auto">
             Delivering exceptional digital solutions tailored to your needs
           </p>
         </div>
@@ -91,16 +91,16 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto"
         >
           {services.map((service, index) => (
             <div 
               key={index}
-              className="flex-1 flex flex-col justify-center gap-4 group bg-gray-900/40 backdrop-blur-sm p-6 rounded-xl hover:bg-gray-900/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF00]/10 border border-gray-800/50 hover:border-[#00FF00]/30"
+              className="flex-1 flex flex-col justify-center gap-3 group bg-gray-900/40 backdrop-blur-sm p-5 rounded-xl hover:bg-gray-900/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#00FF00]/10 border border-gray-800/50 hover:border-[#00FF00]/30"
             >
               <div className="w-full flex justify-between items-center">
                 <motion.div 
-                  className="text-6xl font-black text-[#00FF00]/10 group-hover:text-[#00FF00]/20 transition-all duration-500 relative"
+                  className="text-5xl font-black text-[#00FF00]/10 group-hover:text-[#00FF00]/20 transition-all duration-500 relative"
                   style={{
                     textShadow: "0 0 0px rgba(0, 255, 0, 0)",
                   }}
@@ -114,7 +114,7 @@ const Services = () => {
                 </motion.div>
                 <motion.a 
                   href={service.href}
-                  className="p-2.5 rounded-full bg-[#00FF00]/10 text-[#00FF00] transform transition-all duration-300 border border-[#00FF00]/20"
+                  className="p-2 rounded-full bg-[#00FF00]/10 text-[#00FF00] transform transition-all duration-300 border border-[#00FF00]/20"
                   whileHover={{
                     scale: 1.1,
                     rotate: -45,
@@ -122,16 +122,16 @@ const Services = () => {
                     borderColor: "rgba(0, 255, 0, 0.4)",
                   }}
                 >
-                  <BsArrowDownRight size={20} />
+                  <BsArrowDownRight size={18} />
                 </motion.a>
               </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-[#00FF00] transition-colors duration-300">
+              <h3 className="text-lg font-bold text-white group-hover:text-[#00FF00] transition-colors duration-300">
                 {service.title}
               </h3>
               <p className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                 {service.description}
               </p>
-              <div className="border-b border-[#00FF00]/20 w-full group-hover:border-[#00FF00]/40 transition-colors duration-300 mt-1" />
+              <div className="border-b border-[#00FF00]/20 w-full group-hover:border-[#00FF00]/40 transition-colors duration-300 mt-2" />
             </div>
           ))}
         </motion.div>

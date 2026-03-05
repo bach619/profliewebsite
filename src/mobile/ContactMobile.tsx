@@ -131,29 +131,29 @@ const ContactMobile: React.FC = () => {
   return (
     <section 
       id="contact"
-      className="relative min-h-screen pt-24 pb-16 bg-black"
+      className="relative pt-20 pb-12 bg-black"
     >
       <ParticlesBackground />
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-[#00FF00]/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#00FF00]/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-[#00FF00]/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#00FF00]/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
       
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-6">
         {/* Hero Contact Section */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-3 text-white">
+            <h2 className="text-xl font-bold mb-2 text-white">
               Let's <span className="text-[#00FF00]">Connect</span>
             </h2>
-            <div className="w-16 h-0.5 bg-[#00FF00] mx-auto mb-4"></div>
-            <p className="text-base text-gray-300 leading-relaxed">
+            <div className="w-14 h-0.5 bg-[#00FF00] mx-auto mb-3"></div>
+            <p className="text-sm text-gray-300 leading-relaxed">
               Ready to bring your ideas to life? Let's collaborate and create something amazing together.
             </p>
           </motion.div>
