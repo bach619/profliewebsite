@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, ArrowUp, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 // Import icons from react-icons/fa and react-icons/si
@@ -42,9 +42,11 @@ import {
   SiWebpack,
   SiGoogleanalytics,
   SiGooglesearchconsole,
-  SiAhrefs,
   SiSemrush,
-  SiKotlin
+  SiKotlin,
+  SiVuedotjs,
+  SiSupabase,
+  SiFastapi
 } from 'react-icons/si';
 
 interface TabProps {
@@ -298,70 +300,67 @@ const Resume: React.FC = () => {
 
   const experienceData = [
     {
-      year: '2022 - Present',
-      title: 'Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      details: 'Developed and maintained web applications using React, Node.js, and MongoDB.\nCollaborated with cross-functional teams to deliver high-quality software products.\nImplemented RESTful APIs and integrated third-party services.'
+      year: '2025 - Present',
+      title: 'Full-Stack Developer',
+      company: 'Freelance / Yayasan Antangpatahu Mahaga Lewu',
+      details: 'Building Sistem Informasi Perhutanan Sosial & PKS — Next.js 16, React 19, TypeScript, and Supabase.\nDeveloping carbon project management, budget approval workflows, and role-based dashboards.\nMaintaining client platforms for KPHL Kapuas Kahayan, Divisi Perencanaan, and PUFC Palangka Raya United.'
     },
     {
-      year: '2020 - 2021',
-      title: 'Freelance Web Developer',
-      company: 'E-commerce Startup',
-      details: 'Designed and developed a custom e-commerce platform for a small business.\nIntegrated payment gateways and managed product databases.\nProvided ongoing support and maintenance.'
+      year: '2025',
+      title: 'Frontend Developer',
+      company: 'Freelance Projects',
+      details: 'Built koperasikamapa, yayasanamal, instapure, hoodagoods, converter-app, and freeimg2convert.\nImplemented modern UI with React, Vite, Tailwind CSS, and Shadcn/ui.\nIntegrated WhatsApp, payment, and affiliate workflows for client websites.'
     },
     {
-      year: '2019 - 2020',
-      title: 'Teaching Assistant',
-      company: 'Tech Academy',
-      details: 'Assisted lead instructors in teaching web development bootcamps.\nProvided one-on-one support to students and graded assignments.\nHelped develop course materials and projects.'
+      year: '2024 - 2025',
+      title: 'Web Developer',
+      company: 'Project-Based',
+      details: 'Developed and deployed client websites for organizations in Central Kalimantan.\nUsed React, TypeScript, Vue.js, and Tailwind CSS across projects.\nManaged deployment on Netlify and Vercel with custom domains.'
     },
     {
-      year: '2015 - 2017',
-      title: 'IT Support Specialist',
-      company: 'Tech Support Services',
-      details: 'Provided technical support to end-users for hardware and software issues.\nManaged user accounts and network infrastructure.\nDocumented support procedures and created knowledge base articles.'
-    },
-    {
-      year: '2012 - 2013',
-      title: 'IT Intern',
-      company: 'Local Tech Startup',
-      details: 'Gained initial exposure to software development and IT operations.\nAssisted senior developers with testing and documentation.\nParticipated in team meetings and learned about agile methodologies.'
+      year: '2020 - 2024',
+      title: 'Self-Taught Developer',
+      company: 'GitHub @bach619',
+      details: 'Started the development journey in January 2020 with HTML, CSS, and JavaScript.\nBuilt a series of portfolio websites (myportfolio_V01, myporfoliov2, portfolioV.final).\nLearned version control, responsive design, and modern frontend tooling through real projects.'
     }
   ];
 
 
   const educationData = [
     {
-      year: '2023',
-      degree: 'Full Stack Web Development Bootcamp',
-      institution: 'Online Course Platform',
-      details: 'Intensive program covering modern web development stack'
+      year: '2020',
+      degree: 'The Beginning - Self-Taught',
+      institution: 'GitHub @bach619',
+      details: 'Started programming journey; foundations of HTML, CSS, and JavaScript through hands-on projects'
     },
     {
-      year: '2022',
-      degree: 'Front-end Track',
-      institution: 'Codecademy',
-      details: 'Advanced JavaScript and React specialization'
+      year: '2021 - 2023',
+      degree: 'Frontend Engineering',
+      institution: 'Project-Based Learning',
+      details: 'React, TypeScript, Tailwind CSS, Vue.js — applied across portfolio and client websites'
     },
     {
-      year: '2020 - 2021',
-      degree: 'Programming Course',
-      institution: 'Online Course',
-      details: 'Fundamentals of computer science and programming'
+      year: '2024 - 2025',
+      degree: 'Full-Stack Development',
+      institution: 'Project-Based Learning',
+      details: 'Next.js, Node.js, Supabase/PostgreSQL, REST APIs — used to ship production applications'
     },
     {
-      year: '2019',
-      degree: 'Certified Web Developer',
-      institution: 'Tech Institute',
-      details: 'Web development fundamentals and best practices'
+      year: '2026',
+      degree: 'Smart Contract Security',
+      institution: 'VYPER Project',
+      details: 'Python, FastAPI, Docker Compose, and the Slither/Mythril/Echidna/Halmos/Foundry toolchain'
     }
   ];
 
   const personalInfo = [
-    { label: 'Name', value: 'Boby Mihing' },
+    { label: 'Name', value: 'Boby Harinto Mihing' },
     { label: 'Phone', value: '(+62) 823 5173 2449' },
-    { label: 'Experience', value: '12+ Years' },
+    { label: 'Experience', value: '6+ Years' },
     { label: 'Email', value: 'boby@mihing.com' },
+    { label: 'Location', value: 'Palangka Raya, Indonesia' },
+    { label: 'GitHub', value: 'bach619 · 26 repos' },
+    { label: 'Live Sites', value: '16 on Netlify' },
     { label: 'Nationality', value: 'Indonesian' },
     { label: 'Languages', value: 'English, Indonesian' },
     { label: 'Freelance', value: 'Available' }
@@ -442,6 +441,12 @@ const Resume: React.FC = () => {
           level: 80,
           icon: <FaJava size={24} className="text-red-500" />,
           description: "Cross-platform application development with Spring framework"
+        },
+        {
+          name: "Vue.js",
+          level: 78,
+          icon: <SiVuedotjs size={24} className="text-green-500" />,
+          description: "Progressive JavaScript framework for interactive UIs"
         }
       ]
     },
@@ -495,6 +500,18 @@ const Resume: React.FC = () => {
           level: 72,
           icon: <SiPrisma size={24} className="text-teal-500" />,
           description: "Next-generation ORM for Node.js and TypeScript"
+        },
+        {
+          name: "Supabase",
+          level: 85,
+          icon: <SiSupabase size={24} className="text-emerald-500" />,
+          description: "PostgreSQL backend with auth, storage, and row-level security"
+        },
+        {
+          name: "FastAPI",
+          level: 75,
+          icon: <SiFastapi size={24} className="text-teal-500" />,
+          description: "High-performance Python API framework with async support"
         }
       ]
     },
@@ -617,9 +634,11 @@ const Resume: React.FC = () => {
         <div className="max-w-2xl mb-8">
           <h2 className="text-3xl font-bold text-white mb-4">About me</h2>
           <p className="text-gray-400 mb-8">
-            I'm a passionate full-stack developer with expertise in creating beautiful,
-            functional, and user-friendly applications. With over 12 years of experience,
-            I specialize in modern web technologies and delivering high-quality solutions.
+            I'm Boby Harinto Mihing, a full-stack developer from Palangka Raya, Indonesia.
+            Since 2020 I've built and shipped web applications across 26 public repositories
+            on GitHub and 16 live sites on Netlify — from production platforms for forestry
+            and cooperatives to VYPER, a smart contract security auditing tool. I specialize
+            in modern web technologies: Next.js, React, TypeScript, Supabase, and Tailwind CSS.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

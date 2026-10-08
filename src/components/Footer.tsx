@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         {/* Social Media Icons */}
         <div className="flex gap-6">
           <SocialIconGithub 
-            href="https://github.com/" 
+            href="https://github.com/bach619" 
             color="#ffffff"
             hoverColor="#00FF00"
             size="small"

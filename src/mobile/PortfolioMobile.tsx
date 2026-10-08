@@ -99,12 +99,12 @@ const PortfolioMobile: React.FC = () => {
                 style={{ zIndex: isActive ? 20 : 10 }}
               >
                 <div className="bg-gray-900/30 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-800 h-full flex flex-col">
-                  <div className="relative h-48">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                  <div className="relative h-56 bg-gray-950">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                   
@@ -117,7 +117,7 @@ const PortfolioMobile: React.FC = () => {
                     </div>
                     
                     <h3 className="text-lg font-bold mb-2 text-white">{project.title}</h3>
-                    <p className="text-xs text-gray-300 mb-4 flex-1">
+                    <p className="text-xs text-gray-300 mb-4 flex-1 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>
                       {project.description}
                     </p>
                     

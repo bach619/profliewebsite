@@ -75,7 +75,7 @@ const HeroImage: React.FC<HeroImageProps> = ({
           <img 
             src={src} 
             alt={alt}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[center_15%]"
             width={width}
             height={height}
             onError={handleImageError}

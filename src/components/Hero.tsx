@@ -1,8 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import { Download } from 'lucide-react';
+import { Github } from 'lucide-react';
 import ParticlesBackground from './ParticlesBackground';
-import { SocialIconGithub, SocialIconLinkedin, SocialIconTwitter } from './social';
 import Typewriter from './Typewriter';
 import Stats from './Stats';
 import HeroImage from './HeroImage';
@@ -45,7 +44,7 @@ const Hero: React.FC = () => {
           <div className="md:w-1/2 md:order-2 w-full flex justify-center md:justify-end mb-8 md:mb-0">
             <div className="w-2/3 md:w-full max-w-[300px] transform scale-75 md:scale-100 transition-transform duration-300">
               <HeroImage 
-                src="https://lh3.googleusercontent.com/a/ACg8ocLPB6QyhHqLDAhv0a-zd5PW-DhsIecphQMysyLAp9LArG3dxQY=s288-c-no"
+                src="/profile.jpeg"
                 alt="Boby Mihing"
                 width={300}
                 height={300}             
@@ -95,7 +94,7 @@ const Hero: React.FC = () => {
             <div className="flex items-center justify-center md:justify-start space-x-4 mt-2">
               <a 
                 href="#contact" 
-                className="px-6 py-3 md:px-8 md:py-4 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-base md:text-lg rounded-full transition-colors duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-glow"
+                className="w-44 md:w-52 px-6 py-3 md:px-8 md:py-4 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-base md:text-lg border-2 border-transparent rounded-full transition-colors duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-glow"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -105,34 +104,15 @@ const Hero: React.FC = () => {
               </a>
               
               <a 
-                href="/resume.pdf" 
-                className="px-6 py-3 md:px-8 md:py-4 border-2 border-[#00FF00] text-[#00FF00] text-base md:text-lg hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105"
-                download
+                href="https://github.com/bach619"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-44 md:w-52 px-6 py-3 md:px-8 md:py-4 border-2 border-[#00FF00] text-[#00FF00] text-base md:text-lg hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2 transform hover:scale-105"
               >
-                <Download size={18} className="mr-2" />
-                Resume
+                <Github className="h-6 w-6 md:h-7 md:w-7" />
+                GitHub
               </a>
-            </div>
-            
-            <div className="flex items-center justify-center md:justify-start space-x-6 mt-4">
-              <SocialIconGithub 
-                href="https://github.com/"
-                color="#50B106"
-                hoverColor="#00FF00"
-                size="large"
-              />
-              <SocialIconLinkedin 
-                href="https://linkedin.com/"
-                color="#50B106"
-                hoverColor="#00FF00"
-                size="large"
-              />
-              <SocialIconTwitter 
-                href="https://twitter.com/"
-                color="#50B106"
-                hoverColor="#00FF00"
-                size="large"
-              />
             </div>
           </div>
         </div>
@@ -141,10 +121,10 @@ const Hero: React.FC = () => {
       {/* Stats with reduced height on mobile */}
       <div className="h-[20vh] md:h-auto">
         <Stats 
-          experience={12}
-          projects={206}
-          skills={16}
-          commits={+5000}
+          experience={6}
+          projects={26}
+          skills={39}
+          commits={+134}
         />
       </div>
     </section>

@@ -49,7 +49,7 @@ const Portfolio = () => {
 
   // Kategori untuk filter
   const categories = [
-    { id: 'all', icon: <Layers size={16} />, label: 'Semua' },
+    { id: 'all', icon: <Layers size={16} />, label: 'All' },
     { id: 'web', icon: <Monitor size={16} />, label: 'Web' },
     { id: 'mobile', icon: <Maximize size={16} />, label: 'Mobile' },
     { id: 'ui', icon: <Code size={16} />, label: 'UI/UX' }
@@ -117,7 +117,7 @@ const Portfolio = () => {
       <div className={`relative w-full max-w-5xl transition-all duration-500 ${
         expandedView 
           ? 'fixed inset-0 w-screen h-screen z-50 bg-black/95' 
-          : 'h-[340px] z-10'
+          : 'h-[480px] z-10'
       }`}>
         {/* Project Cards */}
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
@@ -162,7 +162,7 @@ const Portfolio = () => {
                 <div className={`
                   ${expandedView 
                     ? 'w-4/5 h-4/5 max-w-6xl max-h-[80vh]'
-                    : 'w-full max-w-md rounded-xl overflow-hidden'
+                    : 'w-full max-w-xl rounded-xl overflow-hidden'
                   }
                   bg-gradient-to-br from-gray-900 to-gray-950
                   transition-all duration-500 ease-out
@@ -173,15 +173,15 @@ const Portfolio = () => {
                   <div className={`h-full flex ${expandedView ? 'flex-row' : 'flex-col'}`}>
                     {/* Image */}
                     <div className={`
-                      ${expandedView ? 'w-3/5 h-full' : 'w-full h-48'} 
+                      ${expandedView ? 'w-3/5 h-full bg-black/40' : 'w-full h-56 bg-gray-950'} 
                       overflow-hidden relative group
                     `}>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-5" />
+                      <div className={`absolute inset-0 z-5 bg-gradient-to-t ${expandedView ? 'from-black/20' : 'from-black/60'} via-transparent to-transparent`} />
                       <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        className={`w-full h-full transition-transform duration-1000 group-hover:scale-105 ${expandedView ? 'object-contain' : 'object-cover object-top'}`}
                       />
                       
                       {/* Overlay scan effect */}
@@ -214,7 +214,7 @@ const Portfolio = () => {
                     
                     {/* Content */}
                     <div className={`
-                      ${expandedView ? 'w-2/5 p-6 overflow-y-auto' : 'w-full p-5'} 
+                      ${expandedView ? 'w-2/5 p-6 overflow-y-auto' : 'w-full p-4'} 
                       flex flex-col
                     `}>
                       <div className="flex items-center gap-2 mb-1">
@@ -226,7 +226,7 @@ const Portfolio = () => {
                       
                       <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
                       
-                      <p className="text-gray-400 text-sm mb-4 flex-grow overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
+                      <p className="text-gray-400 text-sm mb-3 flex-grow overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                         {project.description}
                       </p>
                       

@@ -226,7 +226,7 @@ const Contact: React.FC = () => {
               </p>
               <div className="flex space-x-1.5">
                 <SocialIconGithub 
-                  href="https://github.com/" 
+                  href="https://github.com/bach619" 
                   color="#ffffff"
                   hoverColor="#00FF00"
                   size="small"

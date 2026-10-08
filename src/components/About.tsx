@@ -43,8 +43,11 @@ const About: React.FC<AboutProps> = ({ id = "about" }) => {
           <h2 className="text-3xl font-bold mb-4 text-white">About Me</h2>
           <div className="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-300 leading-relaxed">
-            I'm a passionate full-stack developer with expertise in creating beautiful, functional, and user-friendly applications. 
-            With over 5 years of experience, I specialize in modern web technologies and delivering high-quality solutions.
+            I'm Boby Harinto Mihing, a full-stack developer from Palangka Raya, Central Kalimantan.
+            I build production web applications for organizations — from forest management information systems
+            and carbon project dashboards to cooperatives, football academies, and charities.
+            My work spans 26 public repositories on GitHub and 16 live sites deployed on Netlify,
+            built with modern technologies like Next.js, React, TypeScript, Supabase, and Tailwind CSS.
           </p>
         </div>
         
@@ -53,22 +56,22 @@ const About: React.FC<AboutProps> = ({ id = "about" }) => {
             {
               icon: <Briefcase />,
               title: "Professional Experience",
-              content: "I've worked with startups and established companies, helping them build robust web applications and improving user experiences. My approach combines clean code practices with creative problem-solving."
+              content: "Full-stack developer building real production systems: Sistem Informasi Perhutanan Sosial & PKS for Yayasan Antangpatahu Mahaga Lewu, KPHL Kapuas Kahayan, Divisi Perencanaan, PUFC Palangka Raya United, and more — using Next.js, React, TypeScript, Supabase, and Tailwind CSS."
             },
             {
               icon: <GraduationCap />,
-              title: "Education & Certifications",
-              content: "Self-taught developer with a passion for continuous learning. Completed extensive online courses in web development and programming. Active participant in various tech bootcamps and digital learning platforms."
+              title: "Education & Growth",
+              content: "Self-taught developer on GitHub since 2020. My learning journey is documented in 26 public repositories — from early portfolio experiments to full-stack applications, developer tools, and a 28-microservice smart contract audit platform (VYPER)."
             },
             {
               icon: <Award />,
               title: "Achievements",
-              content: "Recognized for excellence in coding with awards at regional hackathons. Developed an open-source library with over 500 stars on GitHub. Speaker at tech conferences focusing on modern web development practices."
+              content: "Built and deployed 16 live web platforms on Netlify — for forestry, cooperatives, charities, sports, and alumni organizations in Central Kalimantan. Created VYPER, a local-first smart contract security auditing pipeline using Slither, Mythril, Echidna, Halmos, and Foundry."
             },
             {
               icon: <Heart />,
               title: "Interests & Values",
-              content: "Beyond coding, I enjoy hiking, photography, and playing chess. I'm passionate about mentoring new developers and contributing to open-source communities. I value collaboration, continuous improvement, and ethical technology practices."
+              content: "Beyond coding, I enjoy football, photography, and exploring new technologies. I value clean code, continuous improvement, and using technology to solve real problems for communities in Kalimantan."
             }
           ].map((item, index) => (
             <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:scale-105">

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Download } from 'lucide-react';
+import { Github } from 'lucide-react';
 import ParticlesBackground from '../components/ParticlesBackground';
-import { SocialIconGithub, SocialIconLinkedin, SocialIconTwitter } from '../components/social';
 import Typewriter from '../components/Typewriter';
 import Stats from '../components/Stats';
 import HeroImage from '../components/HeroImage';
@@ -21,7 +20,7 @@ const HeroMobile: React.FC = () => {
           {/* Hero Image */}
           <div className="w-2/5 max-w-[160px] mb-8">
           <HeroImage 
-            src="https://lh3.googleusercontent.com/a/ACg8ocLPB6QyhHqLDAhv0a-zd5PW-DhsIecphQMysyLAp9LArG3dxQY=s288-c-no"
+            src="/profile.jpeg"
             alt="Boby Mihing"
             width={160}
             height={160}             
@@ -70,7 +69,7 @@ const HeroMobile: React.FC = () => {
           <div className="w-full max-w-[220px] flex flex-col items-center gap-3 mb-8">
             <a 
               href="#contact" 
-              className="w-full px-5 py-2 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-sm rounded-full transition-colors duration-300 flex items-center justify-center"
+              className="w-full h-10 px-5 py-2 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-sm rounded-full transition-colors duration-300 flex items-center justify-center"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -80,45 +79,25 @@ const HeroMobile: React.FC = () => {
             </a>
             
             <a 
-              href="/resume.pdf" 
-              className="w-full px-5 py-2 border border-[#00FF00] text-[#00FF00] text-sm hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 flex items-center justify-center"
-              download
+              href="https://github.com/bach619"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-full h-10 px-5 py-2 border border-[#00FF00] text-[#00FF00] text-sm hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <Download size={14} className="mr-2" />
-              Resume
+              <Github size={18} />
+              GitHub
             </a>
-          </div>
-          
-          {/* Social Media Icons */}
-          <div className="flex items-center justify-center gap-4">
-            <SocialIconGithub 
-              href="https://github.com/"
-              color="#50B106"
-              hoverColor="#00FF00"
-              size="small"
-            />
-            <SocialIconLinkedin 
-              href="https://linkedin.com/"
-              color="#50B106"
-              hoverColor="#00FF00"
-              size="small"
-            />
-            <SocialIconTwitter 
-              href="https://twitter.com/"
-              color="#50B106"
-              hoverColor="#00FF00" 
-              size="small"
-            />
           </div>
         </div>
         
         {/* Stats Section - Moved up with negative margin */}
         <div className="w-full -mt-6">
           <Stats 
-            experience={12}
-            projects={206}
-            skills={16}
-            commits={+5000}
+            experience={6}
+            projects={26}
+            skills={39}
+            commits={+134}
           />
         </div>
       </div>

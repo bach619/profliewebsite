@@ -211,7 +211,7 @@ const ContactMobile: React.FC = () => {
           </p>
           <div className="flex justify-center space-x-6">
             <SocialIconGithub 
-              href="https://github.com/" 
+              href="https://github.com/bach619" 
               color="#ffffff"
               hoverColor="#00FF00"
               size="default"
@@ -436,7 +436,7 @@ const ContactMobile: React.FC = () => {
           
           <div className="flex justify-center space-x-6 mb-6">
             <SocialIconGithub 
-              href="https://github.com/" 
+              href="https://github.com/bach619" 
               color="#ffffff"
               hoverColor="#00FF00"
               size="default"
