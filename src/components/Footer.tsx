@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
-import { SocialIconGithub, SocialIconLinkedin, SocialIconTwitter } from './social';
+import { Globe } from 'lucide-react';
+import { SocialIconGithub } from './social';
 import Squares from './squares/Squares';
 
 const Footer: React.FC = () => {
@@ -21,25 +22,22 @@ const Footer: React.FC = () => {
         />
 
         {/* Social Media Icons */}
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <SocialIconGithub 
             href="https://github.com/bach619" 
             color="#ffffff"
             hoverColor="#00FF00"
             size="small"
           />
-          <SocialIconLinkedin 
-            href="https://linkedin.com/" 
-            color="#ffffff"
-            hoverColor="#00FF00"
-            size="small"
-          />
-          <SocialIconTwitter
-            href="https://twitter.com/" 
-            color="#ffffff"
-            hoverColor="#00FF00"
-            size="small"
-          />
+          <a
+            href="https://zerocorp.live"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#00FF00]"
+          >
+            <Globe size={14} />
+            zerocorp.live
+          </a>
         </div>
 
         {/* Copyright */}

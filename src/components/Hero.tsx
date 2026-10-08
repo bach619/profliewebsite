@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 import ParticlesBackground from './ParticlesBackground';
 import Typewriter from './Typewriter';
 import Stats from './Stats';
@@ -91,10 +91,10 @@ const Hero: React.FC = () => {
               </div>
             </div>
             
-            <div className="flex items-center justify-center md:justify-start space-x-4 mt-2">
+            <div className="mt-2 grid w-full max-w-lg grid-cols-3 gap-2 md:gap-3">
               <a 
                 href="#contact" 
-                className="w-44 md:w-52 px-6 py-3 md:px-8 md:py-4 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-base md:text-lg border-2 border-transparent rounded-full transition-colors duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-glow"
+                className="w-full px-3 py-3 md:py-4 bg-[#398400] hover:bg-[#00FF00]/90 text-white text-base md:text-lg border-2 border-transparent rounded-full transition-colors duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-glow"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -108,10 +108,21 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="w-44 md:w-52 px-6 py-3 md:px-8 md:py-4 border-2 border-[#00FF00] text-[#00FF00] text-base md:text-lg hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2 transform hover:scale-105"
+                className="w-full px-3 py-3 md:py-4 border-2 border-[#00FF00] text-[#00FF00] text-base md:text-lg hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-1.5 md:gap-2 transform hover:scale-105"
               >
                 <Github className="h-6 w-6 md:h-7 md:w-7" />
                 GitHub
+              </a>
+
+              <a 
+                href="https://zerocorp.live"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ZeroCorp"
+                className="w-full px-3 py-3 md:py-4 border-2 border-[#00FF00] text-[#00FF00] text-base md:text-lg hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-1.5 md:gap-2 transform hover:scale-105"
+              >
+                <Globe className="h-6 w-6 md:h-7 md:w-7" />
+                ZeroCorp
               </a>
             </div>
           </div>

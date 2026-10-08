@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import ParticlesBackground from './ParticlesBackground.tsx';
-import VerticalLabel from './services/VerticalLabel.tsx';
+import VerticalLabel from './ui/VerticalLabel.tsx';
 import ServicesHeader from './services/ServicesHeader.tsx';
 import ServicesGrid from './services/ServicesGrid.tsx';
 

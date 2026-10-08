@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 import ParticlesBackground from '../components/ParticlesBackground';
 import Typewriter from '../components/Typewriter';
 import Stats from '../components/Stats';
@@ -87,6 +87,17 @@ const HeroMobile: React.FC = () => {
             >
               <Github size={18} />
               GitHub
+            </a>
+
+            <a 
+              href="https://zerocorp.live"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ZeroCorp"
+              className="w-full h-10 px-5 py-2 border border-[#00FF00] text-[#00FF00] text-sm hover:bg-[#00FF00]/10 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <Globe size={18} />
+              ZeroCorp
             </a>
           </div>
         </div>

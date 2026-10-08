@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import ParticlesBackground from '../components/ParticlesBackground';
-import VerticalLabel from '../components/services/VerticalLabel';
+import VerticalLabel from '../components/ui/VerticalLabel';
 import ServicesHeader from '../components/services/ServicesHeader';
 import ServiceCard from '../components/services/ServiceCard';
 import { services } from '../data/services';
