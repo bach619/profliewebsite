@@ -77,6 +77,13 @@ export interface SkillCategory {
 export const aboutParagraph =
   "I'm Boby Harinto Mihing, a full-stack developer from Palangka Raya, Indonesia. Since 2020 I've built and shipped web applications across 26 public repositories on GitHub and 16 live sites on Netlify — from production platforms for forestry and cooperatives to VYPER, a smart contract security auditing tool. I specialize in modern web technologies: Next.js, React, TypeScript, Supabase, and Tailwind CSS.";
 
+export const educationQuote = {
+  text: 'College is supposed to provide a pathway to financial security and career success. That promise is true for fewer and fewer graduates.',
+  author: 'Charlie Kirk',
+  context:
+    "This is why I didn't finish my Accounting studies at Universitas Sanata Dharma, Yogyakarta."
+};
+
 export const approach: string[] = [
   'Speed of delivery to client',
   'Focus on clean, maintainable code',

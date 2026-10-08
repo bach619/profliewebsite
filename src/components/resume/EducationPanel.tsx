@@ -1,6 +1,6 @@
 import React from 'react';
 import HudCard from '../ui/HudCard';
-import { educationData } from '../../data/resume';
+import { educationData, educationQuote } from '../../data/resume';
 
 const EducationPanel: React.FC = () => (
   <div className="mx-auto max-w-4xl">
@@ -23,6 +23,20 @@ const EducationPanel: React.FC = () => (
           <p className="text-xs leading-relaxed text-gray-400 md:text-sm">{item.details}</p>
         </HudCard>
       ))}
+
+      <HudCard className="col-span-2 p-3 md:p-4">
+        <blockquote className="border-l-2 border-[#00FF00]/60 pl-3 md:pl-4">
+          <p className="text-xs italic leading-snug text-gray-300 md:text-sm md:leading-relaxed [@media(max-height:750px)]:text-[11px]">
+            “{educationQuote.text}”
+          </p>
+          <footer className="mt-1 text-[11px] font-bold not-italic text-[#00FF00] md:text-xs">
+            — {educationQuote.author}
+          </footer>
+          <p className="mt-1 text-[10px] leading-snug text-gray-500 md:text-xs">
+            {educationQuote.context}
+          </p>
+        </blockquote>
+      </HudCard>
     </div>
   </div>
 );
