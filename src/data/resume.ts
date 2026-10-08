@@ -91,7 +91,7 @@ export const personalInfo: PersonalInfoItem[] = [
   { label: 'Name', value: 'Boby Harinto Mihing' },
   { label: 'Phone', value: '(+62) 823 5173 2449' },
   { label: 'Experience', value: '6+ Years' },
-  { label: 'Email', value: 'boby@mihing.com' },
+  { label: 'Email', value: 'bach619@gmail.com' },
   { label: 'Location', value: 'Palangka Raya, Indonesia' },
   { label: 'GitHub', value: 'bach619 · 26 repos' },
   { label: 'Live Sites', value: '16 on Netlify' },

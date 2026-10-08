@@ -203,7 +203,7 @@ const ResumeAccordion = () => {
 
   // Contact data
   const contact = [
-    { icon: <Mail size={16} />, value: 'boby@mihing.com' },
+    { icon: <Mail size={16} />, value: 'bach619@gmail.com' },
     { icon: <Phone size={16} />, value: '+62 823 5173 2449' },
     { icon: <MapPin size={16} />, value: 'Palangka Raya, Indonesia' }
   ];
