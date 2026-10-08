@@ -13,6 +13,7 @@ import {
 
 // Import projects dan tipe dari file terpisah
 import { projects, type ProjectCategory } from '../data/projects.ts';
+import VerticalLabel from './ui/VerticalLabel.tsx';
 
 // Komponen Portfolio
 const Portfolio = () => {
@@ -71,7 +72,9 @@ const Portfolio = () => {
           backgroundSize: '40px 40px'
         }} />
       </div>
-      
+
+      {!expandedView && <VerticalLabel text="PORTFOLIO" />}
+
       {/* Header */}
       <div className={`w-full max-w-5xl mx-auto mb-6 transition-all duration-500 ${
         expandedView 

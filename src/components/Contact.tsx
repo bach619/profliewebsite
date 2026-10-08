@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { Mail, MapPin, Clock, Globe, Map, ArrowUpRight, Github } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import ParticlesBackground from './ParticlesBackground';
+import VerticalLabel from './ui/VerticalLabel.tsx';
 import { motion } from 'framer-motion';
 import HudCard from './ui/HudCard';
 
@@ -74,6 +75,8 @@ const Contact: React.FC = () => {
       className="relative flex min-h-screen flex-col bg-black pt-28 pb-4 opacity-0 transition-opacity duration-1000 md:pt-32 lg:pt-48 [@media(min-height:880px)]:justify-center"
     >
       <ParticlesBackground />
+
+      <VerticalLabel text="CONTACT" />
 
       <div className="container relative z-10 mx-auto px-4 py-0.5 sm:px-6 lg:px-8">
         {/* Header */}
