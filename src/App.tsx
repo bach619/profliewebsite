@@ -1,70 +1,50 @@
 "use client"
-import React, { useState, useEffect, useRef, Suspense } from 'react';
+import React, { useState, useEffect, useRef, useMemo, Suspense, lazy } from 'react';
 import Header from './components/Header.tsx';
-import Hero from './components/Hero';
-import HeroMobile from './mobile/HeroMobile.tsx';
-import Services from './components/Services.tsx';
-import Portfolio from './components/Portfolio.tsx';
-import Resume from './components/Resume.tsx';
-import Contact from './components/Contact.tsx';
 import WhatsAppWidget from './components/WhatsAppWidget.tsx';
 import NavigationIndicators from './components/NavigationIndicators.tsx';
 import { ThemeProvider } from './context/ThemeContext.tsx';
 import { useDeviceType } from './hooks/useDeviceType.ts';
 
-const SectionLoader: React.FC<{ 
-  componentName: string; 
-  sectionRefs: React.RefObject<HTMLElement>[]; 
+const Hero = lazy(() => import('./components/Hero.tsx'));
+const HeroMobile = lazy(() => import('./mobile/HeroMobile.tsx'));
+const Services = lazy(() => import('./components/Services.tsx'));
+const Portfolio = lazy(() => import('./components/Portfolio.tsx'));
+const Resume = lazy(() => import('./components/Resume.tsx'));
+const Contact = lazy(() => import('./components/Contact.tsx'));
+
+const SECTION_NAMES = ['Hero', 'Services', 'Portfolio', 'Resume', 'Contact'] as const;
+
+const SectionLoader: React.FC<{
+  componentName: (typeof SECTION_NAMES)[number];
+  sectionRefs: React.RefObject<HTMLElement>[];
   index: number;
-  isLast: boolean;
   isMobile: boolean;
-}> = ({ componentName, sectionRefs, index, isLast, isMobile }) => {
-  const [Component, setComponent] = useState<React.ComponentType | null>(null);
-
-  useEffect(() => {
-    const loadComponent = async () => {
-      let module;
-      if (isMobile && componentName === 'Hero') {
-        module = { default: HeroMobile };
-      } else {
-        switch (componentName) {
-          case 'Hero':
-            module = { default: Hero };
-            break;
-          case 'Services':
-            module = { default: Services };
-            break;
-          case 'Portfolio':
-            module = { default: Portfolio };
-            break;
-          case 'Resume':
-            module = { default: Resume };
-            break;
-          case 'Contact':
-            module = { default: Contact };
-            break;
-          default:
-            return;
-        }
-      }
-      setComponent(() => module.default);
-    };
-
-    loadComponent();
-  }, [componentName, isMobile]);
-
-  if (!Component) {
-    return <div className="h-screen flex items-center justify-center">
-      <div className="animate-pulse text-lg">Boby_Loading...</div>
-    </div>;
-  }
+}> = ({ componentName, sectionRefs, index, isMobile }) => {
+  const Component =
+    componentName === 'Hero'
+      ? isMobile
+        ? HeroMobile
+        : Hero
+      : componentName === 'Services'
+        ? Services
+        : componentName === 'Portfolio'
+          ? Portfolio
+          : componentName === 'Resume'
+            ? Resume
+            : Contact;
 
   return (
-    <section 
-      ref={sectionRefs[index]} 
-      className={`h-screen ${isLast ? 'mb-0' : ''}`}
-    >
-      <Component />
+    <section ref={sectionRefs[index]} className="h-screen">
+      <Suspense
+        fallback={
+          <div className="h-screen flex items-center justify-center">
+            <div className="animate-pulse text-lg">Boby_Loading...</div>
+          </div>
+        }
+      >
+        <Component />
+      </Suspense>
     </section>
   );
 };
@@ -74,7 +54,10 @@ function App() {
   const isMobile = deviceType === 'mobile';
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const sectionRefs = Array(5).fill(null).map(() => useRef<HTMLElement>(null));
+  const sectionRefs = useMemo(
+    () => Array.from({ length: SECTION_NAMES.length }, () => React.createRef<HTMLElement>()),
+    []
+  );
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -207,22 +190,15 @@ function App() {
           isScrollingUp={isScrollingUp}
         />
         <main className="relative">
-          <Suspense fallback={
-            <div className="h-screen flex items-center justify-center">
-              <div className="animate-pulse text-lg">Loading...</div>
-            </div>
-          }>
-            {['Hero', 'Services', 'Portfolio', 'Resume', 'Contact'].map((componentName, index) => (
-              <SectionLoader 
-                key={componentName} 
-                componentName={componentName} 
-                sectionRefs={sectionRefs} 
-                index={index}
-                isLast={index === 4}
-                isMobile={isMobile}
-              />
-            ))}
-          </Suspense>
+          {SECTION_NAMES.map((componentName, index) => (
+            <SectionLoader
+              key={componentName}
+              componentName={componentName}
+              sectionRefs={sectionRefs}
+              index={index}
+              isMobile={isMobile}
+            />
+          ))}
         </main>
         {!isMobile && (
           <>

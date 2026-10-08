@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import ParticlesBackground from './ParticlesBackground.tsx';
 import VerticalLabel from './ui/VerticalLabel.tsx';
 import ResumeHeader from './resume/ResumeHeader.tsx';
@@ -59,17 +59,22 @@ const Resume: React.FC = () => {
         <div className="mx-auto max-w-6xl">
           <ResumeTabs active={activeTab} onChange={setActiveTab} />
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-            >
-              {panels[activeTab]}
-            </motion.div>
-          </AnimatePresence>
+          {(Object.keys(panels) as ResumeTab[]).map((tab) => {
+            const isActive = activeTab === tab;
+
+            return (
+              <motion.div
+                key={tab}
+                initial={false}
+                animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 16 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className={isActive ? '' : 'hidden'}
+                aria-hidden={!isActive}
+              >
+                {panels[tab]}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
